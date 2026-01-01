@@ -1,6 +1,3 @@
-****** ENGLISH ******
-
-Tool to analyze jitter between 2 slaves based on their TIE vector
 
     # Created on February 2025
     # @author: Denis Albrecq & Margot Durou
@@ -8,17 +5,31 @@ Tool to analyze jitter between 2 slaves based on their TIE vector
     # Contact: albrecq.d@gmail.com | martin.pedata@gmail.com
     # Last update: 29-08-25
 
+****** ENGLISH ******
 
-    INFORMATION:
+Tool to analyze jitter between 2 slaves based on their TIE vector
 
-	- Interface.exe is the executable. Open it to access the UI directly
-	- Follow the file "UI - user guide", starting page 4, to navigate the app. ONLY IN FRENCH
-	- Brief explanation in English: Click the button next to the .csv bar on top of the page, drop the folder "testing" (found in "Data" folder) containing dummy csv files. Now, first, choose the reference slave by clicking one of the numbers in the grid, then choose the measured slave. For this implementation containing dummy csv files, only numbers 1 and 2 are valid. Then click parse. You can open the rising edges visualization (along with jitter measurement) by clicking "ouvrir image". You can also open a text file containing the average delay time (leading or lagging) of the measured slave with respect to the reference for each CSV file by clicking "ouvrir fichier".
-
-
-PYTHON NOTES
+WHAT TO DO:
 
         - "interface.py" is the entry point of the program. Run it to open the graphical interface that allows you to analyze CSV files.
+        - To install all required packages:
+                    $ pip install -r /path/to/requirements.txt
+
+		- If facing issues despite having both python and pip, it may be a PATH problem. Run the following:
+		   			$ python -m pip install -r /path/to/requirements.txt
+
+----> Follow the file "UI - user guide", starting page 4, to navigate the app. ONLY IN FRENCH
+
+Brief explanation in English: 
+
+1) Click the button next to the .csv bar on top of the page, drop the folder "testing" (found in "Data" -> "testing_csv") containing dummy csv files. 
+2) Now, first, choose the reference slave by clicking one of the numbers in the grid, then choose the measured slave. For this implementation containing dummy csv files, only numbers 1 and 2 are valid. 
+3) Then click parse. 
+4) You can open the rising edges visualization (along with jitter measurement) by clicking "ouvrir image". 
+You can also open a text file containing the average delay time (leading or lagging) of the measured slave with respect to the reference for each CSV file by clicking "ouvrir fichier".
+
+
+PYTHON NOTES:
 
         - "coremodules" contains the modules used by the interface.
 
@@ -29,22 +40,8 @@ PYTHON NOTES
 
         - "utilmodules" contains the modules defining helper functions (empty for now).
 
-        - "Data" contains some folders with CSV files. To be deleted or kept for debugging purposes.
 
-        - Your CSV files must be located in a folder. The folder does not necessarily have to contain only CSV files:
-          the program will ignore any files that are not CSVs in the folder.
-          The folder can be located anywhere on the PC: the interface will allow you to open the file explorer.
-
-        - If you encounter index errors during parsing, check that the CSV files are saved with a comma separator.
-
-        - To install all required packages:
-                    $ pip install -r /path/to/requirements.txt
-
-	- If facing issues despite having both python and pip, it may be a PATH problem. Run the following:
-		    $ python -m pip install -r /path/to/requirements.txt
-
-
-    NOTE ON TIME OPTIMIZATION:
+NOTES ON TIME OPTIMIZATION:
 
         - The function "lecture_txt_temps" in the "lecture" module is used to *quantitatively* analyze the execution
           time difference between two parsing methods.
@@ -75,32 +72,29 @@ PYTHON NOTES
 
 Outil pour analyser le jitter entre 2 esclaves à partir de son vecteur TIE
 
-    #Created on February 2025
-    #@author: Denis Albrecq & Margot Durou
-    #@editor: Martin Pedata
-    #Contact: albrecq.d@gmail.com | martin.pedata@gmail.com
-    #Last update: 29-08-25
 
+QUE FAIRE :
 
-    INFORMATIONS:
-        - "interface.py" est le point d'entrée du programme. Lancez-le pour ouvrir l'interface graphique qui vous permettra d'analyser les fichiers csv.
-
-        - "coremodules" contient les modules utilisés par l'interface. 
-
-        - "archivemodules" contient les modules qui vous permettent de faire des analyses plus profondes (même que l'interface + créer un spectrogramme, un histogramme, création theorique des données, comparaison des temps d'execution, ...).
-        le point d'entrée pour ces analyses la n'est pas "interface.py" mais "main.py". 
-
-        - "utilmodules" contient les modules designant les helper functions (vide pour le moment)
-
-        - "Data" contient quelque dossier contenant des fichiers csv. À Supprimer ou à garder pour du debugging.
-
-        - Vos fichiers csv doivent se trouver dans un dossier. Le dossier ne doit pas forcement avoir que des csv: Le programme ignorera tout fichiers qui ne sont pas des csv dans le dossier.
-        Le dossier peut se trouver n'importe où dans le PC: L'interface vous permettra d'ouvrir l'explorateur de fichiers
-
-        - Si vous avez obtenez des erreurs d'index durant le parsing, vérifiez que les fichiers CSV sont enregistrés avec séparateur virgule
-
-        - Pour installer tout les packages qu'il faut: 
+        - "interface.py" est le point d’entrée du programme. Lancez-le pour ouvrir l’interface graphique qui vous permettra d’analyser les fichiers CSV.
+        - Pour installer tous les packages requis :
                     $ pip install -r /path/to/requirements.txt
+
+		- En cas de problèmes malgré la présence de Python et de pip, il peut s’agir d’un problème de PATH. Exécutez la commande suivante :
+		   			$ python -m pip install -r /path/to/requirements.txt
+
+----> Suivez le fichier "UI - user guide", à partir de la page 4, pour naviguer dans l’application. UNIQUEMENT EN FRANÇAIS
+
+NOTES PYTHON :
+
+        - "coremodules" contient les modules utilisés par l’interface.
+
+        - "archivemodules" contient les modules qui permettent d’effectuer des analyses plus avancées
+          (mêmes analyses que l’interface + création d’un spectrogramme, d’un histogramme,
+          génération théorique de données, comparaison des temps d’exécution, ...).
+          Le point d’entrée pour ces analyses n’est pas "interface.py" mais "main.py".
+
+        - "utilmodules" contient les modules définissant les fonctions utilitaires (vide pour le moment).
+
 
 
     NOTE SUR L'OPTIMIZATION DES TEMPS:
